@@ -11,10 +11,9 @@
         android:id="@+id/header_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/header_name"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
+        android:textAllCaps="true"/>
 
 
     <TextView
@@ -22,20 +21,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/quantity_text"
-        android:textSize="16sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:paddingTop="1dp"
-        android:layout_marginTop="16dp"/>
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 
     <Button
+        android:id="@+id/order_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_text"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:id="@+id/order_button" />
+        android:text="@string/button_text" />
 
 </LinearLayout>
