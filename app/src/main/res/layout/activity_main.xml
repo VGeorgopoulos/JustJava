@@ -25,11 +25,11 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/plus_button"
+            android:id="@+id/minus_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:onClick="incrementOrder"
-            android:text="@string/plus_button" />
+            android:onClick="decrementOrder"
+            android:text="@string/minus_button" />
 
         <TextView
             android:id="@+id/quantity_text_view"
@@ -42,11 +42,12 @@
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/minus_button"
+            android:id="@+id/plus_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:onClick="decrementOrder"
-            android:text="@string/minus_button" />
+            android:onClick="incrementOrder"
+            android:text="@string/plus_button" />
+
 
     </LinearLayout>
 
