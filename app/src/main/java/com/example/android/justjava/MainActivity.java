@@ -35,10 +35,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = calculatePrice();
-//        String priceMessage = "Total: $" + price;
-//        priceMessage += "\nThank you!";
         displayMessage(createOrderSummary(price));
-
     }
 
 
@@ -48,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
      * @return Total Price
      */
     private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
+        return quantity * 5;
     }
 
     /**
@@ -57,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
      * @return Returns the name,quantity, total and a thank you message
      */
     private String createOrderSummary(int price) {
-        String orderSummary = String.format("Name: Vasilis Georgopoulos\nQuantity: %d\nTotal: $%d\nThank you!", quantity, price);
+        String orderSummary = String.format("Name: Vasilis Georgopoulos\n" +
+                "Quantity: %d\n" +
+                "Total: $%d\n" +
+                "Thank you!", quantity, price);
         return orderSummary;
     }
 
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given price on the screen.
      */
     private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }/**/
 
@@ -73,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 
     /**
@@ -84,6 +83,5 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
-
 
 }

@@ -4,7 +4,7 @@
     <string name="plus_button">+</string>
     <string name="quantity_text">0</string>
     <string name="minus_button">-</string>
-    <string name="header_price">Price</string>
+    <string name="header_price">Order Summary</string>
     <string name="cost_text">$0</string>
     <string name="button_text">ORDER</string>
 </resources>
