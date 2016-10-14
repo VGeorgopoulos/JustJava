@@ -37,10 +37,14 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         int price = calculatePrice();
         displayMessage(createOrderSummary(price));
-        //Log.v("MainCtivity", "The price is " + price);
+        //Log.v("MainActivity", "The price is " + price);
+        //Log.v("MainActivity", "Has Whipped cream " + hasWippedCream());
     }
 
-    public boolean hasWippedCream() {
+    /**
+     * @return Returns True if checked or false if not.
+     */
+    private boolean hasWippedCream() {
         CheckBox hasCream = (CheckBox) findViewById(R.id.whipped_cream_check);
         return hasCream.isChecked();
     }
