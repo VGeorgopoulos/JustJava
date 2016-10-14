@@ -12,12 +12,28 @@
     tools:context="com.example.android.justjava.MainActivity">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/topping_text"
+        android:textAllCaps="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:paddingLeft="24dp"
+        android:text="@string/whipped_cream"
+        android:textSize="16sp" />
+
+    <TextView
         android:id="@+id/header_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="@string/header_name"
         android:textAllCaps="true" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
