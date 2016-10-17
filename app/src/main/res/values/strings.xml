@@ -8,5 +8,6 @@
     <string name="cost_text">$0</string>
     <string name="button_text">ORDER</string>
     <string name="topping_text">Toppings</string>
-    <string name="whipped_cream">Whipped cream</string>
+    <string name="has_whipped_cream">Whipped cream</string>
+    <string name="_has_chocolate">Chocolate</string>
 </resources>

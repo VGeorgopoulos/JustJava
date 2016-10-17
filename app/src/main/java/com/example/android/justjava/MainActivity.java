@@ -42,11 +42,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * @return Returns True if checked or false if not.
+     * @return Returns True or False if checked for Wipped Cream
      */
     private boolean hasWippedCream() {
         CheckBox hasCream = (CheckBox) findViewById(R.id.whipped_cream_check);
         return hasCream.isChecked();
+    }
+
+    /**
+     *
+     * @return True or False if checked for Chocolate
+     */
+    private boolean hasChocolate() {
+        CheckBox hasChocolate = (CheckBox) findViewById(R.id.chocolate_check);
+        return hasChocolate.isChecked();
     }
 
     /**
@@ -65,9 +74,10 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary(int price) {
         String orderSummary = String.format("Name: Vasilis Georgopoulos\n" +
                 "Add whipped cream? %b\n" +
+                "Add chocolate? %b\n" +
                 "Quantity: %d\n" +
                 "Total: $%d\n" +
-                "Thank you!", hasWippedCream(), quantity, price);
+                "Thank you!", hasWippedCream(),hasChocolate(), quantity, price);
         return orderSummary;
     }
 
