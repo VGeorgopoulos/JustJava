@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -36,9 +37,17 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = calculatePrice();
-        displayMessage(createOrderSummary(price));
+        displayMessage(createOrderSummary());
         //Log.v("MainActivity", "The price is " + price);
         //Log.v("MainActivity", "Has Whipped cream " + hasWippedCream());
+    }
+
+    /**
+     * @return The name inside the EditText
+     */
+    private String enterYourName() {
+        EditText yourName = (EditText) findViewById(R.id.name_field);
+        return yourName.getText().toString();
     }
 
     /**
@@ -50,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
      * @return True or False if checked for Chocolate
      */
     private boolean hasChocolate() {
@@ -68,16 +76,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * @param price Price of the Coffee
+     *
      * @return Returns the name,quantity, total and a thank you message
      */
-    private String createOrderSummary(int price) {
-        String orderSummary = String.format("Name: Vasilis Georgopoulos\n" +
+    private String createOrderSummary() {
+        String orderSummary = String.format("Name: %s\n" +
                 "Add whipped cream? %b\n" +
                 "Add chocolate? %b\n" +
                 "Quantity: %d\n" +
                 "Total: $%d\n" +
-                "Thank you!", hasWippedCream(),hasChocolate(), quantity, price);
+                "Thank you!", enterYourName(), hasWippedCream(), hasChocolate(), quantity, calculatePrice());
         return orderSummary;
     }
 
