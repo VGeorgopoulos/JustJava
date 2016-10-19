@@ -42,6 +42,24 @@ public class MainActivity extends AppCompatActivity {
         //Log.v("MainActivity", "Has Whipped cream " + hasWippedCream());
     }
 
+
+    /**
+     * Calculates the price of the order.
+     *
+     * @return Total Price
+     */
+    private int calculatePrice() {
+        int price = 5;
+        if (hasWippedCream()) {
+            price += 1;
+        }
+        if (hasChocolate()) {
+            price += 2;
+        }
+        return quantity * price;
+    }
+
+
     /**
      * @return The name inside the EditText
      */
@@ -66,17 +84,8 @@ public class MainActivity extends AppCompatActivity {
         return hasChocolate.isChecked();
     }
 
-    /**
-     * Calculates the price of the order.
-     *
-     * @return Total Price
-     */
-    private int calculatePrice() {
-        return quantity * 5;
-    }
 
     /**
-     *
      * @return Returns the name,quantity, total and a thank you message
      */
     private String createOrderSummary() {
