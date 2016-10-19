@@ -2,10 +2,8 @@
     <string name="app_name">Just Java</string>
     <string name="header_name">Quantity</string>
     <string name="plus_button">+</string>
-    <string name="quantity_text">0</string>
+    <string name="quantity_text">1</string>
     <string name="minus_button">-</string>
-    <string name="header_price">Order Summary</string>
-    <string name="cost_text">$0</string>
     <string name="button_text">ORDER</string>
     <string name="topping_text">Toppings</string>
     <string name="has_whipped_cream">Whipped cream</string>

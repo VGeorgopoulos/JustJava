@@ -91,19 +91,10 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/cost_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/header_price"
-            android:textAllCaps="true" />
-
-        <TextView
             android:id="@+id/order_summary_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/cost_text"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
@@ -111,7 +102,6 @@
             android:id="@+id/order_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:onClick="submitOrder"
             android:text="@string/button_text" />
 

@@ -1,11 +1,14 @@
 package com.example.android.justjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -14,21 +17,32 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 0;
+    int quantity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        displayQuantity(quantity);
     }
 
     public void incrementOrder(View view) {
-        quantity += 1;
+        if (quantity < 100) {
+            quantity += 1;
+        } else {
+            Toast.makeText(this, "You cannot have more than 100 coffees", Toast.LENGTH_SHORT).show();
+        }
+
         displayQuantity(quantity);
     }
 
     public void decrementOrder(View view) {
-        quantity -= 1;
+        if (quantity > 2) {
+            quantity = quantity - 1;
+        } else {
+            // Show an error message as a toast
+            Toast.makeText(this, "You cannot have less than 1 coffee", Toast.LENGTH_SHORT).show();
+        }
         displayQuantity(quantity);
     }
 
@@ -36,10 +50,15 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = calculatePrice();
-        displayMessage(createOrderSummary());
-        //Log.v("MainActivity", "The price is " + price);
-        //Log.v("MainActivity", "Has Whipped cream " + hasWippedCream());
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order for " + enterYourName());
+        intent.putExtra(Intent.EXTRA_TEXT, createOrderSummary());
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
     }
 
 
@@ -49,14 +68,14 @@ public class MainActivity extends AppCompatActivity {
      * @return Total Price
      */
     private int calculatePrice() {
-        int price = 5;
+        int basePrice = 5;
         if (hasWippedCream()) {
-            price += 1;
+            basePrice += 1;
         }
         if (hasChocolate()) {
-            price += 2;
+            basePrice += 2;
         }
-        return quantity * price;
+        return quantity * basePrice;
     }
 
 
