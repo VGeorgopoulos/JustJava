@@ -90,19 +90,13 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/order_summary_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
 
         <Button
             android:id="@+id/order_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="submitOrder"
+            android:layout_marginTop="16dp"
             android:text="@string/button_text" />
 
     </LinearLayout>

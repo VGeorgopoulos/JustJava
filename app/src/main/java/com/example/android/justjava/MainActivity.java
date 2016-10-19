@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.NumberFormat;
-
 /**
  * This app displays an order form to order coffee.
  */
@@ -58,9 +56,7 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-
     }
-
 
     /**
      * Calculates the price of the order.
@@ -77,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return quantity * basePrice;
     }
-
 
     /**
      * @return The name inside the EditText
@@ -103,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         return hasChocolate.isChecked();
     }
 
-
     /**
      * @return Returns the name,quantity, total and a thank you message
      */
@@ -118,27 +112,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }/**/
-
-    /**
-     * This method displays the given text on the screen.
-     */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
-
-    /**
      * This method displays the given quantity value on the screen.
      */
     private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
-
 }
