@@ -102,13 +102,12 @@ public class MainActivity extends AppCompatActivity {
      * @return Returns the name,quantity, total and a thank you message
      */
     private String createOrderSummary() {
-        String orderSummary = String.format("Name: %s\n" +
+        return String.format("Name: %s\n" +
                 "Add whipped cream? %b\n" +
                 "Add chocolate? %b\n" +
                 "Quantity: %d\n" +
                 "Total: $%d\n" +
                 "Thank you!", enterYourName(), hasWippedCream(), hasChocolate(), quantity, calculatePrice());
-        return orderSummary;
     }
 
     /**
