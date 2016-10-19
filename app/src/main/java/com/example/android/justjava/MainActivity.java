@@ -15,7 +15,7 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 1;
+    private int quantity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

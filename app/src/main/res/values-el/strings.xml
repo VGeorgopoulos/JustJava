@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Απλά Java</string>
+    <string name="_has_chocolate">Σοκολάτα</string>
+    <string name="button_text">Παραγγελία</string>
+    <string name="has_whipped_cream">Σαντιγύ</string>
+    <string name="header_name">Ποσότητα</string>
+    <string name="toppings">Επικάλυψη</string>
+    <string name="your_name">Είσαγε το όνομά σου</string>
+</resources>
